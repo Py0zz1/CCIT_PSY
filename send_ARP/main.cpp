@@ -76,6 +76,7 @@ void init_dev(char *dev_name)
 
 void find_mac(const uint8_t *pkt_data,char *victim_ip,char *gateway_ip)
 {
+<<<<<<< HEAD
     struct arp_header *ah;
     ah = (struct arp_header *)pkt_data;
 
@@ -225,3 +226,27 @@ int main(int argc, char **argv)
 
 
 
+=======
+    switch(err_num)
+    {
+    case 0:
+        cout <<"send_ARP [Interface] [Sender_IP] [Gateway_IP]" <<endl;
+        break;
+    case 1:
+        cout <<"PCAP_OPEN_ERROR!\n" <<endl;
+        break;
+    case 2:
+        cout <<"PCAP_COMPILE_ERROR!\n" <<endl;
+        break;
+    case 3:
+        cout <<"PCAP_SET_FILTER_ERROR!\n"<<endl;
+        break;
+    case 4:
+        cout <<"THREAD_CREATE_ERROR!\n"<<endl;
+        break;
+    default:
+        cout <<"Unknown ERROR!\n"<<endl;
+        break;
+    }
+}
+>>>>>>> 68b2e326a81286f229649560cd50a5b8b14df0d9
