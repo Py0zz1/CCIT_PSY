@@ -22,8 +22,8 @@ struct ether_header
 
 struct ip_header
 {
-    uint8_t ip_version : 4;     // unsigned char --> uint8_t Fixed
-    uint8_t ip_header_length : 4;
+    uint8_t ip_header_length : 4;     // unsigned char --> uint8_t Fixed
+    uint8_t ip_version : 4;
     uint8_t ip_TOS;
     uint16_t ip_total_length;
     uint16_t ip_iden;
@@ -180,7 +180,7 @@ int print_ip_header(const uint8_t *pkt_data)
         printf("(UDP)");
         printf("Des IP : %s\n", inet_ntoa(ih->ip_des_add));
     }
-    return ((char)ih->ip_header_length)*5;
+    return ((char)ih->ip_header_length)*4;
 }
 int print_tcp_header(const uint8_t *pkt_data)
 {
